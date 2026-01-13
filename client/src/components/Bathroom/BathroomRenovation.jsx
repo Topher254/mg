@@ -32,7 +32,7 @@ const BathroomRenovation = () => {
            
             <h1 className="text-6xl md:text-7xl font-bold text-white mb-6 leading-tight">
               On a mission to<br />
-              <span className="text-red-500">empower remote teams</span>
+              <span className="text-red-500">Creating Beautiful Spaces</span>
             </h1>
             <p className="text-xl text-gray-300 mb-4 max-w-2xl">
               Brampton's Bathroom Renovation Experts
