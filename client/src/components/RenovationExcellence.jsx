@@ -1,10 +1,10 @@
 import React from 'react';
 import bath1 from '../assets/bat1.jpeg';
-import bath2 from '../assets/bat2.jpeg';
+import bath2 from '../assets/bat11.jpeg';
 import bath3 from '../assets/bat3.jpeg';
-import bath4 from '../assets/bat4.jpeg';
-import bath5 from '../assets/bat5.jpeg';
-import bath6 from '../assets/bat6.jpeg';
+import bath4 from '../assets/bat14.jpeg';
+import bath5 from '../assets/bat13.jpeg';
+import bath6 from '../assets/bath5.jpg';
 
 export default function RenovationExcellence() {
   const services = [
@@ -53,161 +53,226 @@ export default function RenovationExcellence() {
   ];
 
   return (
-    <div className="w-full bg-white py-16 px-4">
+    <div className="w-full bg-gradient-to-br from-slate-50 via-white to-red-50 py-20 px-4 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Our Renovation Excellence
+        <div className="text-center mb-20">
+          <div className="inline-block mb-4">
+            <span className="text-red-600 text-sm font-bold tracking-widest uppercase">Excellence in Every Detail</span>
+          </div>
+          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+            Our Renovation
+            <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-800">
+              Excellence
+            </span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Get all the information you need about our comprehensive bathroom renovation services. Explore our year-over-year commitment to delivering exceptional bathroom transformations in Brampton and surrounding areas.
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Get all the information you need about our comprehensive bathroom renovation services. 
+            Explore our year-over-year commitment to delivering exceptional transformations.
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {services.map((service) => (
-            <div 
-              key={service.id}
-              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-            >
-              {/* Image */}
-              <div className="h-64 overflow-hidden">
-                <img 
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
+        {/* Service 1 - Diagonal Split Design */}
+        <div className="mb-16 bg-white rounded-3xl shadow-2xl overflow-hidden">
+          <div className="grid md:grid-cols-2">
+            <div className="relative h-96 md:h-auto overflow-hidden">
+              <div 
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ 
+                  backgroundImage: `url(${services[0].image})`,
+                  clipPath: 'polygon(0 0, 100% 0, 85% 100%, 0% 100%)'
+                }}
+              ></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-red-600/20 to-transparent"></div>
+              <div className="absolute top-8 left-8 w-20 h-20 bg-red-600 rounded-2xl flex items-center justify-center transform rotate-12 shadow-xl">
+                <span className="text-white text-3xl font-bold">01</span>
               </div>
+            </div>
+            <div className="p-10 md:p-12 flex flex-col justify-center">
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                {services[0].title}
+              </h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                {services[0].description}
+              </p>
+              <div className="space-y-3">
+                {services[0].features.map((feature, index) => (
+                  <div key={index} className="flex items-center group">
+                    <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-red-700 rounded-lg flex items-center justify-center mr-3 transform group-hover:rotate-45 transition-transform duration-300">
+                      <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <span className="text-gray-700 font-medium">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
 
-              {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                  {service.description}
+        {/* Service 2 - Overlapping Image & Content */}
+        <div className="mb-16 relative">
+          <div className="grid md:grid-cols-12 gap-8 items-center">
+            <div className="md:col-span-7 relative">
+              <div className="bg-gradient-to-br from-red-600 to-red-800 rounded-3xl p-8 md:p-12 shadow-2xl">
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mr-4">
+                    <span className="text-white text-2xl font-bold">02</span>
+                  </div>
+                  <h3 className="text-3xl font-bold text-white">
+                    {services[1].title}
+                  </h3>
+                </div>
+                <p className="text-white/90 mb-6 leading-relaxed">
+                  {services[1].description}
                 </p>
-
-                {/* Features */}
-                <ul className="mb-4 space-y-2">
-                  {service.features.map((feature, index) => (
-                    <li key={index} className="flex items-center text-sm text-gray-700">
-                      <span className="w-1.5 h-1.5 bg-red-500 rounded-full mr-2"></span>
-                      {feature}
-                    </li>
+                <div className="grid grid-cols-3 gap-4">
+                  {services[1].features.map((feature, index) => (
+                    <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+                      <div className="text-white font-semibold text-sm">{feature}</div>
+                    </div>
                   ))}
-                </ul>
-
-                {/* CTA Button */}
-                <button className="w-full bg-red-500 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-red-600 transition-colors">
-                  Get an Estimate
-                </button>
+                </div>
               </div>
             </div>
-          ))}
-        </div>
-
-        {/* Bottom Section - Fraud Awareness Style */}
-        <div className="border-t-2 border-gray-200 pt-12">
-          <div className="mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-              Quality Assurance & Customer Protection
-            </h2>
-            <p className="text-lg text-gray-600">
-              Beware of unlicensed contractors and remain vigilant by understanding the standards of professional bathroom renovation services and the tips on how to choose the right contractor for your project.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Card 1 */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="h-56 overflow-hidden">
-                <img 
-                  src={bath1}
-                  alt="Licensed Contractors"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-red-500 mb-3">
-                  Licensed & Insured Professionals
-                </h3>
-                <p className="text-gray-600 text-sm mb-4">
-                  Work with fully licensed and insured bathroom renovation contractors. MG Tile & Stone ensures all craftsmen are certified professionals with over 30 years of combined experience in the Brampton area.
-                </p>
-                <button className="bg-red-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-red-600 transition-colors text-sm">
-                  Get an Estimate
-                </button>
-              </div>
-            </div>
-
-            {/* Card 2 */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="h-56 overflow-hidden">
-                <img 
-                  src={bath2}
-                  alt="Transparent Pricing"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-red-500 mb-3">
-                  Transparent & Fair Pricing
-                </h3>
-                <p className="text-gray-600 text-sm mb-4">
-                  Avoid hidden costs and price changes with our upfront, transparent pricing model. We provide detailed quotes with no surprises. Get a free cost estimate and understand exactly what you're paying for before work begins.
-                </p>
-                <button className="bg-red-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-red-600 transition-colors text-sm">
-                  Get an Estimate
-                </button>
-              </div>
-            </div>
-
-            {/* Card 3 */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="h-56 overflow-hidden">
-                <img 
-                  src={bath3}
-                  alt="Quality Materials"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-red-500 mb-3">
-                  Authentic Quality Materials
-                </h3>
-                <p className="text-gray-600 text-sm mb-4">
-                  Beware of substandard materials and shortcuts. We source only authentic, high-quality materials from trusted vendors. Every product comes with manufacturer warranties and our commitment to excellence in your bathroom renovation.
-                </p>
-                <button className="bg-red-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-red-600 transition-colors text-sm">
-                  Get an Estimate
-                </button>
+            <div className="md:col-span-5 md:-ml-8 relative z-10">
+              <div className="rounded-3xl overflow-hidden shadow-2xl transform md:rotate-3 hover:rotate-0 transition-transform duration-500">
+                <img src={services[1].image} alt={services[1].title} className="w-full h-80 object-cover" />
               </div>
             </div>
           </div>
         </div>
 
-        {/* Final CTA */}
-        <div className="mt-16 bg-gray-50 rounded-lg p-8 text-center">
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-            Ready to Experience Brampton's Best Bathroom Renovation Services?
-          </h3>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Join hundreds of satisfied homeowners who have transformed their bathrooms with MG Tile & Stone. Contact us today for your free consultation and cost estimate.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-red-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-red-600 transition-colors">
-              Get an Estimate
-            </button>
-            <span className="text-gray-600">or call us today:</span>
-            <a 
-              href="tel:647-686-6313" 
-              className="text-red-500 font-bold text-xl hover:text-red-600 transition-colors"
-            >
-              647-686-6313
-            </a>
+        {/* Service 3 - Card with Side Image Strip */}
+        <div className="mb-16 bg-white rounded-3xl shadow-2xl overflow-hidden">
+          <div className="flex flex-col md:flex-row">
+            <div className="md:w-2/3 p-10 md:p-12">
+              <div className="flex items-start mb-6">
+                <div className="bg-red-600 text-white px-4 py-2 rounded-full font-bold mr-4">03</div>
+                <div>
+                  <h3 className="text-3xl font-bold text-gray-900 mb-3">
+                    {services[2].title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed mb-6">
+                    {services[2].description}
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                {services[2].features.map((feature, index) => (
+                  <div key={index} className="bg-red-50 text-red-700 px-6 py-3 rounded-full font-semibold border-2 border-red-200">
+                    {feature}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="md:w-1/3 relative">
+              <div 
+                className="h-full min-h-80 bg-cover bg-center"
+                style={{ backgroundImage: `url(${services[2].image})` }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent md:bg-gradient-to-l"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Service 4 - Floating Card Over Image */}
+        <div className="mb-16 relative h-96 rounded-3xl overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${services[3].image})` }}
+          ></div>
+          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="relative h-full flex items-center justify-center p-6">
+            <div className="bg-white rounded-2xl p-8 md:p-10 max-w-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300">
+              <div className="inline-block bg-red-600 text-white px-4 py-2 rounded-full font-bold mb-4">04</div>
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                {services[3].title}
+              </h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                {services[3].description}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {services[3].features.map((feature, index) => (
+                  <span key={index} className="bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-semibold">
+                    {feature}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Service 5 - Zigzag Layout */}
+        <div className="mb-16">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="order-2 md:order-1">
+              <div className="relative">
+                <div className="absolute -top-4 -left-4 w-24 h-24 bg-red-600 rounded-3xl transform -rotate-12"></div>
+                <img 
+                  src={services[4].image} 
+                  alt={services[4].title}
+                  className="relative z-10 rounded-3xl shadow-2xl w-full h-80 object-cover"
+                />
+                <div className="absolute -bottom-4 -right-4 bg-white rounded-2xl p-4 shadow-xl">
+                  <span className="text-red-600 text-4xl font-bold">05</span>
+                </div>
+              </div>
+            </div>
+            <div className="order-1 md:order-2">
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                {services[4].title}
+              </h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                {services[4].description}
+              </p>
+              <div className="space-y-3">
+                {services[4].features.map((feature, index) => (
+                  <div key={index} className="flex items-center bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow">
+                    <div className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                      <span className="text-white font-bold">{index + 1}</span>
+                    </div>
+                    <span className="text-gray-700 font-medium">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Service 6 - Split Diagonal Reverse */}
+        <div className="bg-gradient-to-br from-gray-100 to-gray-300 rounded-3xl shadow-2xl overflow-hidden">
+          <div className="grid md:grid-cols-2">
+            <div className="p-10 md:p-12 flex flex-col justify-center order-2 md:order-1">
+              <div className="inline-block bg-red-600 text-white px-4 py-2 rounded-full font-bold mb-4 w-fit">06</div>
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-700 mb-4">
+                {services[5].title}
+              </h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                {services[5].description}
+              </p>
+              <div className="grid grid-cols-1 gap-3">
+                {services[5].features.map((feature, index) => (
+                  <div key={index} className="flex items-center  backdrop-blur-sm rounded-xl p-4 border border-gray-400">
+                    <div className="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
+                    <span className="text-gray-600 font-medium">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="relative h-96 md:h-auto overflow-hidden order-1 md:order-2">
+              <div 
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ 
+                  backgroundImage: `url(${services[5].image})`,
+                  clipPath: 'polygon(15% 0, 100% 0, 100% 100%, 0 100%)'
+                }}
+              ></div>
+              <div className="absolute inset-0 bg-gradient-to-l from-red-600/20 to-transparent"></div>
+            </div>
           </div>
         </div>
       </div>

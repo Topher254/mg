@@ -319,60 +319,9 @@ export default function BathroomGallery() {
           </div>
         )}
 
-        {/* Bottom CTA Section */}
-        <div className="bg-red-500 rounded-2xl p-8 md:p-12 text-white text-center">
-          <h3 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to See Your Bathroom Transformed?
-          </h3>
-          <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-            Let MG Tile & Stone bring your vision to life. Schedule a free consultation today and discover how we can create the bathroom of your dreams in Brampton.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-white text-red-500 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-colors shadow-lg">
-              Get an Estimate
-            </button>
-            <div className="flex items-center gap-2">
-              <span className="text-white/80">or call:</span>
-              <a
-                href="tel:647-686-6313"
-                className="text-white font-bold text-xl hover:underline"
-              >
-                647-686-6313
-              </a>
-            </div>
-          </div>
-        </div>
+       
 
-        {/* Why Choose Us Section */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="text-center">
-            <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-3xl">✓</span>
-            </div>
-            <h4 className="text-xl font-bold text-gray-900 mb-2">Premium Quality</h4>
-            <p className="text-gray-600 text-sm">
-              We use only the finest materials and proven techniques for lasting results
-            </p>
-          </div>
-          <div className="text-center">
-            <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-3xl">⏱</span>
-            </div>
-            <h4 className="text-xl font-bold text-gray-900 mb-2">On-Time Delivery</h4>
-            <p className="text-gray-600 text-sm">
-              Your project completed on schedule without compromising quality
-            </p>
-          </div>
-          <div className="text-center">
-            <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-3xl">♥</span>
-            </div>
-            <h4 className="text-xl font-bold text-gray-900 mb-2">Customer First</h4>
-            <p className="text-gray-600 text-sm">
-              Your satisfaction is our priority from consultation to completion
-            </p>
-          </div>
-        </div>
+      
       </div>
 
       {/* Add CSS animation keyframes in style tag */}
