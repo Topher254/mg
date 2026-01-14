@@ -1,31 +1,62 @@
-import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router'
+
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import CTAFormSection from './components/CTAFormSection'
 import Footer from './components/Footer'
+
+import Hero from './components/Hero'
 import WhatsNew from './components/WhatsNew'
+import HowItWorks from './components/HowItWorks'
 import RenovationExcellence from './components/RenovationExcellence'
 import BathroomGallery from './components/BathroomGallery'
-import HowItWorks from './components/HowItWorks'
+import CTAFormSection from './components/CTAFormSection'
 import BathroomRenovation from './components/Bathroom/BathroomRenovation'
+import React from 'react'
+import Legal from './components/Legal/Legal'
+import BlogPage from './components/Blog/BlogPage'
+
+
+
+const Gallery = () => (
+  <div className="min-h-screen flex items-center justify-center text-xl">
+    Gallery – Coming Soon
+  </div>
+)
+
+/* Bathroom (Home) Page */
+const BathroomPage = () => (
+  <>
+    <BathroomRenovation />
+    <Hero />
+    <WhatsNew />
+    <HowItWorks />
+    <RenovationExcellence />
+    <BathroomGallery />
+  </>
+)
 
 const App = () => {
   return (
-    <div >
-      <Navbar/>
-      <div className="relative">
-      <BathroomRenovation/>
-      <Hero/>
+    <Router>
+      {/* ALWAYS VISIBLE */}
+      <Navbar />
 
+      {/* PAGE CONTENT */}
+      <main className="relative min-h-screen">
+        <Routes>
+          <Route path="/" element={<BathroomPage />} />
+          <Route path="/bathrooms" element={<BathroomPage />} />
+          <Route path="/legal-basement" element={<Legal/>} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path='/contact' element={<CTAFormSection/>}/>
+          <Route path='/estimate' element={<CTAFormSection/>}/>
+          <Route path="/blog" element={<BlogPage/>} />
 
-      <WhatsNew/>
-      <HowItWorks/>
-      <RenovationExcellence/>
-      <BathroomGallery/>
-      <CTAFormSection/>
-      <Footer/>
-    </div>
-    </div>
+        </Routes>
+      </main>
+
+      {/* ALWAYS VISIBLE */}
+      <Footer />
+    </Router>
   )
 }
 
