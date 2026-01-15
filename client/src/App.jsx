@@ -13,14 +13,12 @@ import BathroomRenovation from './components/Bathroom/BathroomRenovation'
 import React from 'react'
 import Legal from './components/Legal/Legal'
 import BlogPage from './components/Blog/BlogPage'
+import Gallery from './components/Gallery'
+import ServiceAreas from './components/ServiceAreas'
 
 
 
-const Gallery = () => (
-  <div className="min-h-screen flex items-center justify-center text-xl">
-    Gallery – Coming Soon
-  </div>
-)
+
 
 /* Bathroom (Home) Page */
 const BathroomPage = () => (
@@ -31,6 +29,8 @@ const BathroomPage = () => (
     <HowItWorks />
     <RenovationExcellence />
     <BathroomGallery />
+      <ServiceAreas/>
+
   </>
 )
 
@@ -46,7 +46,7 @@ const App = () => {
           <Route path="/" element={<BathroomPage />} />
           <Route path="/bathrooms" element={<BathroomPage />} />
           <Route path="/legal-basement" element={<Legal/>} />
-          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/gallery" element={<Gallery/>} />
           <Route path='/contact' element={<CTAFormSection/>}/>
           <Route path='/estimate' element={<CTAFormSection/>}/>
           <Route path="/blog" element={<BlogPage/>} />

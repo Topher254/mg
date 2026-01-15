@@ -47,15 +47,15 @@ const SpinningCarousel = () => {
   const images = [bath1, bath2, bath3, bath4, bath5];
 
   return (
-    <div className="w-full max-w-[500px] lg:max-w-[600px] mx-auto px-2 sm:px-0">
+    <div className="w-full max-w-[300px] md:max-w-[500px] lg:max-w-[600px] mx-auto px-1">
       <Slider {...settings}>
         {images.map((img, index) => (
-          <div key={index} className="px-1 sm:px-2">
+          <div key={index} className="px-1">
             <div className="relative overflow-hidden rounded-xl">
               <img
                 src={img}
                 alt={`Bathroom ${index + 1}`}
-                className="w-full h-[250px] sm:h-[350px] md:h-[400px] lg:h-[450px] object-cover"
+                className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] xl:h-[450px] object-cover"
               />
             </div>
           </div>
