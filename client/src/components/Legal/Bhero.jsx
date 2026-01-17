@@ -1,14 +1,21 @@
 import React from 'react';
 import { Shield, FileCheck, Ruler, Zap, Wind, DoorOpen, Droplets, AlertCircle } from 'lucide-react';
+import legal2 from '../../assets/legal2.jpg'
+import legal3 from '../../assets/legal3.jpeg'
+import legal4 from '../../assets/legal4.jpeg'
+import legal5 from '../../assets/legal5.jpeg'
+import legal1vid from '../../assets/legal1.mp4';
+import legal2vid from '../../assets/legal2.mp4';
+import legal3vid from '../../assets/legal3.mp4';
 
 export default function Bhero() {
-  const heroImages = [
-    'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1556912173-46c336c7fd55?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1556912167-f556f1f39faa?w=800&h=600&fit=crop'
-  ];
+  const heroMedia = [
+  { type: 'image', src: legal2, alt: 'Basement project 1' },
+  { type: 'image', src: legal3, alt: 'Basement project 2' },
+  { type: 'video', src: legal1vid, alt: 'Basement project 3' },
+  { type: 'video', src: legal2vid, alt: 'Basement project 4' },
+];
+
 
   const services = [
     {
@@ -77,23 +84,47 @@ export default function Bhero() {
         </div>
       </div>
 
-      {/* Image Grid - Asymmetric */}
-      <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-12 md:col-span-7 h-96 bg-neutral-200 overflow-hidden">
-            <img src={heroImages[0]} alt="Basement project" className="w-full h-full object-cover" />
-          </div>
-          <div className="col-span-6 md:col-span-5 h-96 bg-neutral-200 overflow-hidden">
-            <img src={heroImages[1]} alt="Basement project" className="w-full h-full object-cover" />
-          </div>
-          <div className="col-span-6 md:col-span-5 h-64 bg-neutral-200 overflow-hidden">
-            <img src={heroImages[2]} alt="Basement project" className="w-full h-full object-cover" />
-          </div>
-          <div className="col-span-12 md:col-span-7 h-64 bg-neutral-200 overflow-hidden">
-            <img src={heroImages[3]} alt="Basement project" className="w-full h-full object-cover" />
-          </div>
-        </div>
-      </div>
+     {/* Image & Video Grid - Asymmetric */}
+<div className="max-w-6xl mx-auto px-6 py-16">
+  <div className="grid grid-cols-12 gap-4">
+    {/* Slot 1 */}
+    <div className="col-span-12 md:col-span-7 h-96 bg-neutral-200 overflow-hidden rounded-2xl">
+      {heroMedia[0].type === 'image' ? (
+        <img src={heroMedia[0].src} alt={heroMedia[0].alt} className="w-full h-full object-cover" />
+      ) : (
+        <video src={heroMedia[0].src} autoPlay muted loop className="w-full h-full object-cover" />
+      )}
+    </div>
+
+    {/* Slot 2 */}
+    <div className="col-span-6 md:col-span-5 h-96 bg-neutral-200 overflow-hidden rounded-2xl">
+      {heroMedia[1].type === 'image' ? (
+        <img src={heroMedia[1].src} alt={heroMedia[1].alt} className="w-full h-full object-cover" />
+      ) : (
+        <video src={heroMedia[1].src} autoPlay muted loop className="w-full h-full object-cover" />
+      )}
+    </div>
+
+    {/* Slot 3 */}
+    <div className="col-span-6 md:col-span-5 h-64 bg-neutral-200 overflow-hidden rounded-2xl">
+      {heroMedia[2].type === 'image' ? (
+        <img src={heroMedia[2].src} alt={heroMedia[2].alt} className="w-full h-full object-cover" />
+      ) : (
+        <video src={heroMedia[2].src} autoPlay muted loop className="w-full h-full object-cover" />
+      )}
+    </div>
+
+    {/* Slot 4 */}
+    <div className="col-span-12 md:col-span-7 h-64 bg-neutral-200 overflow-hidden rounded-2xl">
+      {heroMedia[3].type === 'image' ? (
+        <img src={heroMedia[3].src} alt={heroMedia[3].alt} className="w-full h-full object-cover" />
+      ) : (
+        <video src={heroMedia[3].src} autoPlay muted loop className="w-full h-full object-cover" />
+      )}
+    </div>
+  </div>
+</div>
+
 
       {/* Services - Clean List Layout */}
       <div className="max-w-5xl mx-auto px-6 py-20">
